@@ -10,7 +10,16 @@ export default function Hero() {
          Overlay a slight dark wash so text pops.
       */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/20 z-10" /> {/* Overlay */}
+
+        {/* FALLBACK IMAGE (For iOS Low Power Mode) */}
+        <img
+          src="/hero-placeholder.jpg"
+          alt="Salon Ambience"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+
+        <div className="absolute inset-0 bg-black/40 z-10" /> {/* Overlay */}
+
         <video
           autoPlay
           loop
@@ -18,8 +27,8 @@ export default function Hero() {
           playsInline
           webkit-playsinline="true"
           preload="auto"
-          className="w-full h-full object-cover"
-          poster="/hero-placeholder.jpg" // Load this first for speed
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          poster="/hero-placeholder.jpg"
         >
           <source src="/salon_slowmo.mp4" type="video/mp4" />
         </video>
