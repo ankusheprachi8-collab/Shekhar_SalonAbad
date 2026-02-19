@@ -65,14 +65,15 @@ export default function Navbar() {
       </div>
 
       {/* MOBILE MENU OVERLAY */}
+      {/* MOBILE MENU OVERLAY */}
       {isMobileMenuOpen && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-charcoal-900 flex flex-col items-center justify-center gap-8 md:hidden">
+        <div className="fixed inset-0 z-40 bg-charcoal-900/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden animate-fade-in-up">
           {["Home", "Services", "Academy", "Contact"].map((item) => (
             <Link
               key={item}
               href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-heading text-cream-50 hover:text-bronze-400"
+              className="text-3xl font-heading text-cream-50 hover:text-bronze-400 transition-colors"
             >
               {item}
             </Link>

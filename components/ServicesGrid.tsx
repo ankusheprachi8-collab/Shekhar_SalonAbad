@@ -9,7 +9,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop",
     colSpan: "md:col-span-2", // Large Card
   },
-{
+  {
     title: "Bridal Studio",
     subtitle: "The Maharashtrian Wedding Specialist",
     link: "/bridal",
@@ -30,7 +30,7 @@ export default function ServicesGrid() {
   return (
     <section className="bg-cream-50 py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
           <div>
@@ -45,19 +45,19 @@ export default function ServicesGrid() {
         </div>
 
         {/* BENTO GRID LAYOUT */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 h-auto md:h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[400px] md:auto-rows-fr h-auto md:h-[600px]">
           {services.map((item, index) => (
-            <Link 
-              key={index} 
+            <Link
+              key={index}
               href={item.link}
               className={`group relative overflow-hidden rounded-none ${item.colSpan} h-[400px] md:h-full block`}
             >
               {/* IMAGE BACKDROP */}
               <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 duration-500" />
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
+                <img
+                  src={item.image}
+                  alt={item.title}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-luxury"
                 />
               </div>

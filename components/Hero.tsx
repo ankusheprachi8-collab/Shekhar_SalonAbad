@@ -32,13 +32,17 @@ export default function Hero() {
             Main Heading 
             Using our custom Serif font + Bronze accent 
         */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading text-cream-50 mb-8 leading-tight">
+        {/* 
+            Main Heading 
+            Using our custom Serif font + Bronze accent 
+        */}
+        <h1 className="text-4xl md:text-7xl lg:text-8xl font-heading text-cream-50 mb-8 leading-tight">
           Redefining <br />
           <span className="italic text-bronze-400">Elegance</span> & Style
         </h1>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center mt-10">
+        <div className="flex flex-col md:flex-row gap-4 justify-center mt-10 w-full md:w-auto">
 
           {/* Primary Button: Solid Bronze */}
           <Link href="/book" className="px-8 py-4 bg-bronze-500 text-white font-body text-sm tracking-widest uppercase hover:bg-bronze-600 transition-colors duration-400 ease-luxury">
