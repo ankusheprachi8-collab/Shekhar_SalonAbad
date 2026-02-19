@@ -1,6 +1,10 @@
 import Link from "next/link";
 
 export default function Hero() {
+  const isProd = process.env.NODE_ENV === "production";
+  const repoName = "Shekhar_SalonAbad";
+  const getPath = (path: string) => isProd ? `/${repoName}${path}` : path;
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-charcoal-900">
 
@@ -13,7 +17,7 @@ export default function Hero() {
 
         {/* FALLBACK IMAGE (For iOS Low Power Mode) */}
         <img
-          src="/hero-placeholder.jpg"
+          src={getPath("/hero-placeholder.jpg")}
           alt="Salon Ambience"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
@@ -28,9 +32,9 @@ export default function Hero() {
           webkit-playsinline="true"
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover z-0"
-          poster="/hero-placeholder.jpg"
+          poster={getPath("/hero-placeholder.jpg")}
         >
-          <source src="/salon_slowmo.mp4" type="video/mp4" />
+          <source src={getPath("/salon_slowmo.mp4")} type="video/mp4" />
         </video>
       </div>
 
