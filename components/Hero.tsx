@@ -12,7 +12,12 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/20 z-10" /> {/* Overlay */}
         <video
-          autoPlay loop muted playsInline
+          autoPlay
+          loop
+          muted
+          playsInline
+          webkit-playsinline="true"
+          preload="auto"
           className="w-full h-full object-cover"
           poster="/hero-placeholder.jpg" // Load this first for speed
         >
