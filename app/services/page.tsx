@@ -74,8 +74,8 @@ export default function ServicesPage() {
   if (!activeCategory) return <div>Loading...</div>;
 
   return (
-    <main className="min-h-screen bg-cream-50 pt-20">
-      
+    <main className="min-h-screen bg-cream-50">
+
       {/* HEADER */}
       <div className="bg-charcoal-900 text-cream-50 py-20 px-6">
         <div className="max-w-7xl mx-auto">
@@ -85,33 +85,32 @@ export default function ServicesPage() {
       </div>
 
       <div className="flex flex-col lg:flex-row min-h-screen">
-        
+
         {/* LEFT SIDE: Image */}
         <div className="hidden lg:block w-1/2 h-screen sticky top-0 bg-charcoal-900">
-             <img
-              src={activeCategory.image}
-              className="w-full h-full object-cover filter brightness-75 transition-opacity duration-500"
-              alt={activeCategory.name}
-            />
-             <div className="absolute bottom-10 left-10 z-10">
-                <h2 className="text-4xl text-white font-heading">{activeCategory.name}</h2>
-             </div>
+          <img
+            src={activeCategory.image}
+            className="w-full h-full object-cover filter brightness-75 transition-opacity duration-500"
+            alt={activeCategory.name}
+          />
+          <div className="absolute bottom-10 left-10 z-10">
+            <h2 className="text-4xl text-white font-heading">{activeCategory.name}</h2>
+          </div>
         </div>
 
         {/* RIGHT SIDE: List */}
         <div className="w-full lg:w-1/2 bg-cream-50 px-6 py-12 lg:px-20 lg:py-24">
-          
+
           {/* TABS */}
           <div className="flex overflow-x-auto gap-8 mb-16 border-b border-charcoal-900/10 pb-4">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat)}
-                className={`whitespace-nowrap text-sm uppercase tracking-widest pb-2 transition-colors ${
-                  activeCategory.id === cat.id 
-                    ? "text-bronze-500 border-b-2 border-bronze-500" 
+                className={`whitespace-nowrap text-sm uppercase tracking-widest pb-2 transition-colors ${activeCategory.id === cat.id
+                    ? "text-bronze-500 border-b-2 border-bronze-500"
                     : "text-charcoal-900/40"
-                }`}
+                  }`}
               >
                 {cat.name}
               </button>
@@ -121,8 +120,8 @@ export default function ServicesPage() {
           {/* LIST */}
           <div className="space-y-8">
             {activeCategory.items.map((item, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="border-b border-charcoal-900/10 pb-8 cursor-pointer"
                 onClick={() => setExpandedService(expandedService === item.name ? null : item.name)}
               >

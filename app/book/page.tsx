@@ -39,7 +39,7 @@ export default function BookPage() {
     if (step === 1 && !formData.service) return alert("Please select a service.");
     if (step === 2 && (!formData.date || !formData.time)) return alert("Please select date and time.");
     if (step === 3 && (!formData.name || !formData.phone)) return alert("Please fill in your details.");
-    
+
     setStep((prev) => prev + 1);
   };
 
@@ -47,11 +47,11 @@ export default function BookPage() {
 
   return (
     <main className="min-h-screen bg-cream-50 pt-28 pb-12 px-4 flex items-center justify-center">
-      
+
       <div className="w-full max-w-2xl bg-white shadow-2xl rounded-sm overflow-hidden border border-bronze-100">
-        
+
         {/* PROGRESS HEADER */}
-        <div className="bg-charcoal-900 p-6 flex items-center justify-between text-cream-50">
+        <div className="bg-charcoal-900 p-4 sm:p-6 flex items-center justify-between text-cream-50">
           <div>
             <h1 className="font-heading text-2xl">Book Appointment</h1>
             <p className="text-xs text-bronze-400 uppercase tracking-widest mt-1">
@@ -63,7 +63,7 @@ export default function BookPage() {
 
         {/* PROGRESS BAR */}
         <div className="w-full bg-gray-200 h-1">
-          <motion.div 
+          <motion.div
             className="h-full bg-bronze-500"
             initial={{ width: "25%" }}
             animate={{ width: `${step * 25}%` }}
@@ -72,9 +72,9 @@ export default function BookPage() {
         </div>
 
         {/* DYNAMIC FORM AREA */}
-        <div className="p-8 min-h-[400px] relative">
+        <div className="p-5 sm:p-8 min-h-[400px] relative">
           <AnimatePresence mode="wait">
-            
+
             {/* STEP 1: SELECT SERVICE */}
             {step === 1 && (
               <motion.div
@@ -91,8 +91,8 @@ export default function BookPage() {
                       key={service.id}
                       onClick={() => updateForm("service", service)}
                       className={`p-4 border text-left transition-all duration-300 group
-                        ${formData.service?.id === service.id 
-                          ? "border-bronze-500 bg-bronze-50" 
+                        ${formData.service?.id === service.id
+                          ? "border-bronze-500 bg-bronze-50"
                           : "border-gray-200 hover:border-bronze-300"
                         }`}
                     >
@@ -122,14 +122,14 @@ export default function BookPage() {
                 transition={{ duration: 0.3 }}
               >
                 <h2 className="text-2xl font-heading text-charcoal-900 mb-6">Choose Date & Time</h2>
-                
+
                 {/* Date Input */}
                 <div className="mb-8">
                   <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Select Date</label>
                   <div className="relative">
                     <Calendar className="absolute top-3 left-3 text-bronze-500" size={20} />
-                    <input 
-                      type="date" 
+                    <input
+                      type="date"
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 focus:outline-none focus:border-bronze-500 font-body"
                       onChange={(e) => updateForm("date", e.target.value)}
                       value={formData.date}
@@ -140,7 +140,7 @@ export default function BookPage() {
                 {/* Time Slots */}
                 <div>
                   <label className="block text-xs uppercase tracking-widest text-gray-500 mb-3">Available Slots</label>
-                  <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 min-[400px]:grid-cols-3 sm:grid-cols-4 gap-3">
                     {TIME_SLOTS.map((slot) => (
                       <button
                         key={slot}
@@ -169,13 +169,13 @@ export default function BookPage() {
                 transition={{ duration: 0.3 }}
               >
                 <h2 className="text-2xl font-heading text-charcoal-900 mb-6">Your Information</h2>
-                
+
                 <div className="space-y-6">
                   <div>
                     <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Full Name</label>
                     <div className="relative">
                       <User className="absolute top-3 left-3 text-bronze-500" size={20} />
-                      <input 
+                      <input
                         type="text"
                         placeholder="e.g. Rahul Sharma"
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 focus:outline-none focus:border-bronze-500 bg-gray-50"
@@ -189,7 +189,7 @@ export default function BookPage() {
                     <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Phone Number</label>
                     <div className="relative">
                       <span className="absolute top-3 left-3 text-bronze-500 font-bold">+91</span>
-                      <input 
+                      <input
                         type="tel"
                         placeholder="98765 43210"
                         className="w-full pl-12 pr-4 py-3 border border-gray-300 focus:outline-none focus:border-bronze-500 bg-gray-50"
@@ -198,16 +198,16 @@ export default function BookPage() {
                       />
                     </div>
                   </div>
-                  
+
                   {/* Summary Box */}
                   <div className="bg-cream-100 p-4 border border-bronze-100 mt-8">
                     <h3 className="font-heading text-lg mb-2 text-bronze-800">Booking Summary</h3>
                     <p className="text-sm text-gray-600 flex justify-between">
-                      <span>Service:</span> 
+                      <span>Service:</span>
                       <span className="font-bold">{formData.service?.name}</span>
                     </p>
                     <p className="text-sm text-gray-600 flex justify-between mt-1">
-                      <span>Time:</span> 
+                      <span>Time:</span>
                       <span className="font-bold">{formData.date} at {formData.time}</span>
                     </p>
                   </div>
@@ -232,8 +232,8 @@ export default function BookPage() {
                   <br /><br />
                   Our team will call you at <span className="text-bronze-600 font-bold">{formData.phone}</span> shortly to confirm your appointment.
                 </p>
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className="inline-block bg-charcoal-900 text-cream-50 px-8 py-3 uppercase tracking-widest text-xs hover:bg-bronze-500 transition-colors"
                 >
                   Return Home
@@ -246,8 +246,8 @@ export default function BookPage() {
 
         {/* FOOTER ACTIONS */}
         {step < 4 && (
-          <div className="p-6 bg-gray-50 border-t border-gray-200 flex justify-between">
-            <button 
+          <div className="p-4 sm:p-6 bg-gray-50 border-t border-gray-200 flex justify-between">
+            <button
               onClick={handleBack}
               disabled={step === 1}
               className={`flex items-center gap-2 text-sm uppercase tracking-widest font-bold transition-colors
@@ -255,8 +255,8 @@ export default function BookPage() {
             >
               <ChevronLeft size={16} /> Back
             </button>
-            
-            <button 
+
+            <button
               onClick={handleNext}
               className="flex items-center gap-2 bg-charcoal-900 text-cream-50 px-8 py-3 uppercase tracking-widest text-xs hover:bg-bronze-500 transition-colors"
             >

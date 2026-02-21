@@ -20,13 +20,13 @@ export default function CTASection() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                         href="/book"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-charcoal-900 text-white font-bold uppercase tracking-widest text-sm hover:bg-charcoal-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                        className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 px-8 py-4 bg-charcoal-900 text-white font-bold uppercase tracking-widest text-sm hover:bg-charcoal-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
                     >
                         <Calendar size={18} /> Book Appointment
                     </Link>
                     <Link
                         href="/contact"
-                        className="px-8 py-4 border border-white text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-bronze-500 transition-all"
+                        className="w-full sm:w-auto text-center px-8 py-4 border border-white text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-bronze-500 transition-all"
                     >
                         Contact Us
                     </Link>

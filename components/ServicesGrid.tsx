@@ -66,14 +66,14 @@ export default function ServicesGrid() {
               <div className="absolute bottom-0 left-0 p-8 z-20 w-full">
                 <div className="flex justify-between items-end">
                   <div>
-                    <p className="text-cream-100 text-xs uppercase tracking-widest mb-2 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                    <p className="text-cream-100 text-xs uppercase tracking-widest mb-2 opacity-100 md:opacity-0 transform translate-y-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 delay-100">
                       {item.subtitle}
                     </p>
                     <h4 className="text-3xl font-heading text-white group-hover:text-bronze-400 transition-colors">
                       {item.title}
                     </h4>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-md p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="bg-white/10 backdrop-blur-md p-3 rounded-full opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
                     <ArrowUpRight className="text-white" size={24} />
                   </div>
                 </div>

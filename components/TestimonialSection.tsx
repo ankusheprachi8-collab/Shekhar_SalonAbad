@@ -45,7 +45,7 @@ export default function TestimonialSection() {
                     {testimonials.map((item, index) => (
                         <div
                             key={index}
-                            className="bg-white/5 border border-white/10 p-8 relative group hover:bg-white/10 transition-colors duration-300 rounded-sm"
+                            className="bg-white/5 border border-white/10 p-6 sm:p-8 relative group hover:bg-white/10 transition-colors duration-300 rounded-sm"
                         >
                             <Quote className="text-bronze-500 absolute top-8 right-8 opacity-20 group-hover:opacity-50 transition-opacity" size={40} />
 

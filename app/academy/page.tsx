@@ -32,13 +32,13 @@ export default function AcademyPage() {
   const [activeCourse, setActiveCourse] = useState(0);
 
   return (
-    <main className="min-h-screen bg-sage-50 pt-20">
-      
+    <main className="min-h-screen bg-sage-50">
+
       {/* 1. HERO SECTION */}
       <section className="bg-sage-900 text-cream-50 py-24 px-6 relative overflow-hidden">
         {/* Decorative Circle */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        
+
         <div className="max-w-7xl mx-auto relative z-10">
           <span className="inline-block py-1 px-3 border border-white/20 rounded-full text-xs uppercase tracking-widest mb-6">
             Admissions Open for 2024 Batch
@@ -50,7 +50,7 @@ export default function AcademyPage() {
           <p className="max-w-xl text-lg text-white/70 font-body mb-10">
             Join Aurangabad's premier beauty academy. 100% hands-on training, government certification assistance, and placement support in top salons.
           </p>
-          
+
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-8">
             <div>
@@ -71,15 +71,15 @@ export default function AcademyPage() {
 
       {/* 2. MAIN CONTENT (Split Layout) */}
       <section className="max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row gap-16">
-        
+
         {/* LEFT: Course Details */}
         <div className="w-full lg:w-2/3">
           <h2 className="text-3xl font-heading text-charcoal-900 mb-10">Our Curriculum</h2>
-          
+
           <div className="space-y-12">
             {courses.map((course, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white p-8 rounded-none border border-charcoal-900/5 hover:border-bronze-500/30 transition-all shadow-sm group"
               >
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
@@ -142,13 +142,13 @@ export default function AcademyPage() {
           <div className="sticky top-32 bg-white p-8 border border-charcoal-900/5 shadow-xl">
             <h3 className="text-2xl font-heading text-charcoal-900 mb-2">Apply Now</h3>
             <p className="text-sm text-charcoal-900/60 mb-6">Fill the form to get a callback from our counselor.</p>
-            
+
             <form className="space-y-4">
               <div>
                 <label className="block text-xs uppercase tracking-widest text-charcoal-900 mb-2">Full Name</label>
                 <input type="text" className="w-full bg-sage-50 border-none p-3 text-charcoal-900 focus:ring-1 focus:ring-bronze-500 outline-none" placeholder="Enter your name" />
               </div>
-              
+
               <div>
                 <label className="block text-xs uppercase tracking-widest text-charcoal-900 mb-2">Phone Number</label>
                 <input type="tel" className="w-full bg-sage-50 border-none p-3 text-charcoal-900 focus:ring-1 focus:ring-bronze-500 outline-none" placeholder="+91 99999 99999" />
@@ -167,7 +167,7 @@ export default function AcademyPage() {
                 Request Callback <ArrowRight size={16} />
               </button>
             </form>
-            
+
             <div className="mt-6 text-center">
               <p className="text-xs text-charcoal-900/50">Prefer to chat?</p>
               <a href="https://wa.me/911234567890" className="text-sm font-bold text-green-600 hover:underline">Chat on WhatsApp</a>

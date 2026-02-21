@@ -6,7 +6,7 @@ const repoName = 'Shekhar_SalonAbad'; // The repository name
 const config: NextConfig = {
   output: 'export',
   basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
+
   images: {
     unoptimized: true,
   },
