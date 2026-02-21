@@ -11,19 +11,7 @@ export default function Hero() {
          Overlay a slight dark wash so text pops.
       */}
       <div className="absolute inset-0 z-0 bg-charcoal-900">
-        {/* 1. BACKGROUND BLUR LAYER (Mobile Only) - Fills the vertical space elegantly */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0 blur-2xl opacity-40 md:hidden scale-110"
-        >
-          <source src="salon_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-          <source src="salon_slowmo.mp4" type="video/mp4" />
-        </video>
-
-        {/* 2. FALLBACK IMAGE */}
+        {/* 1. FALLBACK IMAGE */}
         <img
           src="hero-placeholder.jpg"
           alt="Salon Ambience"
@@ -41,11 +29,13 @@ export default function Hero() {
           playsInline
           webkit-playsinline="true"
           preload="auto"
-          className="absolute inset-0 w-full h-full object-contain md:object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0"
           poster="hero-placeholder.jpg"
         >
-          {/* Mobile Optimized Video Hook */}
+          {/* Mobile Optimized Video Hook - Plays ONLY on mobile screens */}
           <source src="salon_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+
+          {/* Desktop/Default Video */}
           <source src="salon_slowmo.mp4" type="video/mp4" />
         </video>
       </div>
